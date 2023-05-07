@@ -1,4 +1,3 @@
-//? Q1 =============================================================================
 function exampleOne(numberValue) {
   // sequence 1
   function integerCheck(data) {
@@ -24,10 +23,14 @@ function exampleOne(numberValue) {
   function innerFour(four) {
     return four + 4;
   }
-  
-  return innerFour(innerThree(innerTwo(innerOne(integerCheck(numberValue)))))
+
+  integerCheck(numberValue)
+  const first = innerOne(numberValue);
+  const second = innerTwo(first);
+  const third = innerThree(second);
+  const fourth = innerFour(third);
+  return fourth
 }
 
 const result = exampleOne(10);
 console.log(result);
-//? Q1 =============================================================================
