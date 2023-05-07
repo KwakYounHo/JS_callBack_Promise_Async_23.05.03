@@ -34,3 +34,8 @@ function exampleOne(numberValue) {
 
 const result = exampleOne(10);
 console.log(result);
+
+// Q1. 콜백 지옥으로 처리하기
+// Q2. Promise로 처리하기
+// Q3. async, await로 처리하기
+// Q4. 부모 함수를 클래스로 만들고, 인스턴스에 '동적'으로 4개의 inner함수를 메서드로 추가해보기
