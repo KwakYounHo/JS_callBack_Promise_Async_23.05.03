@@ -1,4 +1,5 @@
-function exampleOne(numberValue) {
+//? Q3 ============================================================================
+async function exampleOne(numberValue) {
   // sequence 1
   function integerCheck(data) {
     if (Number.isInteger(data) === true) {
@@ -23,19 +24,18 @@ function exampleOne(numberValue) {
   function innerFour(four) {
     return four + 4;
   }
-
-  integerCheck(numberValue)
-  const first = innerOne(numberValue);
-  const second = innerTwo(first);
-  const third = innerThree(second);
-  const fourth = innerFour(third);
-  return fourth
+  
+  let result;
+  result = await integerCheck(numberValue);
+  result = await innerOne(result);
+  result = await innerTwo(result);
+  result = await innerThree(result);
+  result = await innerFour(result);
+  return result;
 }
 
-const result = exampleOne(10);
-console.log(result);
-
-// Q1. 콜백 지옥으로 처리하기
-// Q2. Promise로 처리하기
-// Q3. async, await로 처리하기
-// Q4. 부모 함수를 클래스로 만들고, 인스턴스에 '동적'으로 4개의 inner함수를 메서드로 추가해보기
+const result = (async ()=>{
+  const result = await exampleOne(10)
+  console.log(result)
+})();
+//? Q3 ============================================================================
